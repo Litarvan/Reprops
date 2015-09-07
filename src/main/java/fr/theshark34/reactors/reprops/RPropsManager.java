@@ -18,6 +18,7 @@
  */
 package fr.theshark34.reactors.reprops;
 
+import fr.theshark34.reactors.reprops.props.RPropList;
 import fr.theshark34.reactors.reprops.props.RPropNumber;
 import fr.theshark34.reactors.reprops.props.RPropString;
 
@@ -52,6 +53,7 @@ public final class RPropsManager {
 
         registerPropType(RPropString.IDENTIFIER, RPropString.class);
         registerPropType(RPropNumber.IDENTIFIER, RPropNumber.class);
+        registerPropType(RPropList.IDENTIFIER, RPropList.class);
     }
 
     /**

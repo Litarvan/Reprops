@@ -60,14 +60,10 @@ public class RCodePropStart extends RPCode implements RCodeAction {
         RProp finalProp;
 
         // Reading the infos
-        try {
-            propIdentifier = new String(rebyte.readUntil(RepropsCodes.PROP_TYPE_IDENTIFIER));
-            propTypeIdentifier = rebyte.getNext();
-            propLength = Reprops.fromByteArrayToLong(rebyte.readFor(8));
-            prop = rebyte.readFor(propLength);
-        } catch(IOException e) {
-            throw new RebyteMalformedBytesException();
-        }
+        propIdentifier = new String(rebyte.readUntil(RepropsCodes.PROP_TYPE_IDENTIFIER));
+        propTypeIdentifier = rebyte.getNext();
+        propLength = Reprops.fromByteArrayToLong(rebyte.readFor(8));
+        prop = rebyte.readFor(propLength);
 
         // Decrypting the prop identifier
         propIdentifier = Reprops.decrypt(propIdentifier);

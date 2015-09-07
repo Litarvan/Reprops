@@ -18,6 +18,8 @@
  */
 package fr.theshark34.reactors.reprops;
 
+import fr.theshark34.reactors.rebyte.RebyteMalformedBytesException;
+
 /**
  * The RProp
  *
@@ -89,6 +91,6 @@ public abstract class RProp {
      * @param bytes
      *            The read bytes, to convert to the RProp data
      */
-    public abstract void read(byte[] bytes);
+    public abstract void read(byte[] bytes) throws RebyteMalformedBytesException;
 
 }
