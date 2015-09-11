@@ -175,6 +175,8 @@ public class RPropList extends RProp {
 
             // Getting the prop class
             Class<? extends RProp> propClass = RPropsManager.getPropTypeFromIdentifier(propTypeIdentifier);
+            if(propClass == null)
+                throw new RebyteMalformedBytesException("Unknown prop type read : " + propTypeIdentifier);
 
             // Getting the entry size
             long entrySize = Reprops.fromByteArrayToLong(rebyte.readFor(8));
