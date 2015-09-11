@@ -47,10 +47,6 @@ public final class RPropsManager {
      * Register the pre-defined RProp types, like the String, the Number, etc...
      */
     static void registerPredefinedRPropTypes() {
-        // If their were already added, stopping
-        if(propTypes.size() != 0)
-            return;
-
         registerPropType(RPropString.IDENTIFIER, RPropString.class);
         registerPropType(RPropNumber.IDENTIFIER, RPropNumber.class);
         registerPropType(RPropList.IDENTIFIER, RPropList.class);
